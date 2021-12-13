@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Rock, Paper, Scissors
+</title>
+<meta charset="UTF-8">
+
+</head>
+<body>
+<script>
+/* GOAL: Create a game of rock, paper, scissors with the user versus the computer.
+--Begin with a function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play.
+*/
+
+let options = ['Rock', 'Paper', 'Scissors']
+let playerSelection = /* Prompt() */ 'Rock';
+let computerSelection = computerPlay();
+
+
+function computerPlay() {
+    let result = options[Math.floor(Math.random()*options.length)];
+    return result;
+    }
+
+//console.log(computerPlay());
+
+
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'Rock' && computerSelection === 'Scissors')  {
+        let userScore = 0 + 1; 
+        return "You win! Rock beats Scissors";
+        return userScore;
+    } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+        return "You lose! Scissors beats Paper";
+    }
+    else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        return 'You win! Paper beats rock';
+    }
+      else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+        return 'You lose! Rock beats Scissors';
+    } 
+     else if (playerSelection === 'Rock' && computerSelection === 'Paper')   {
+        return 'You lose! Paper beats Rock'
+    }
+     else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+        return 'You win! Scissors beats Paper';
+    }   
+     else if (playerSelection === 'Rock' && computerSelection === 'Rock' || playerSelection === 'Paper' && computerSelection === 'Paper' || playerSelection === 'Scissors' && computerSelection === 'Scissors')
+     {
+         return 'It\'s a tie!'
+     }
+}
+
+
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+
+
+
+
+/*
+function computerPlay() {
+    if (computerPlay("rock")) {
+      return "Rock"
+    } else if (computerPlay("paper")) {
+        return "Paper"
+    } else if (computerPlay("scissors")) {
+        return "Scissors"
+    }
+
+} ;
+
+console.log(computerPlay("rock"));
+
+*/
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
