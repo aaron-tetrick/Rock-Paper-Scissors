@@ -10,72 +10,219 @@
 <script>
 /* GOAL: Create a game of rock, paper, scissors with the user versus the computer.
 --Begin with a function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play.
+
+
+--Write a NEW function called game(). 
+--game() will contain playRound function.
+--Play a 5 round game that keeps score and reports a winner and a loser
+
 */
 
-let options = ['Rock', 'Paper', 'Scissors']
-let playerSelection = /* Prompt() */ 'Rock';
-let computerSelection = computerPlay();
 
 
+
+//let playerEntry = prompt('Rock, Paper, or Scissors?');
+const playerSelection =  'PAPER'//playerEntry.toUpperCase();
+const computerSelection = 'Rock' //computerPlay();
+let playerScore = 0;
+let computerScore = 0;
+//let winner = playRound(playerSelection, computerSelection);
+let winner;
+let loser;
+let result;
+let roundWinner;
+
+
+
+//Generates random computer choice
 function computerPlay() {
-    let result = options[Math.floor(Math.random()*options.length)];
-    return result;
+    const options = ['Rock', 'Paper', 'Scissors'];
+    let computerSelection = options[Math.floor(Math.random()*options.length)];
+    return computerSelection;
     }
 
-//console.log(computerPlay());
 
 
 
+function win(playerChoice, computerChoice) {
+    //playerScore++;
+    console.log(playerChoice);
+    console.log(computerChoice);
+    console.log(playerChoice + ' beats ' + computerChoice + '!')
+}
+function lose() {
+    //computerScore++;
+}
+function draw() {
+    console.log('DRAW');
+}
+
+//Returns whether you win or lose the round
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'Rock' && computerSelection === 'Scissors')  {
-        let userScore = 0 + 1; 
-        return "You win! Rock beats Scissors";
-        return userScore;
-    } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-        return "You lose! Scissors beats Paper";
+    if (playerSelection === computerSelection.toUpperCase()) {
+        draw(playerSelection, computerSelection);
+        return result = 'It\'s a tie!';
+    } else if (playerSelection === 'ROCK') {
+        if (computerSelection === 'Paper') {
+            lose(playerSelection, computerSelection);
+            return result = 'You lose! Paper beats Rock'
+        } else {
+            win(playerSelection, computerSelection);
+            return 'You win! Rock beats Scissors';
+        }
+    } else if (playerSelection === 'PAPER') {
+        if (computerSelection === 'Scissors') {
+             lose(playerSelection, computerSelection);
+             return 'You lose! Scissors beats Paper';
+        } else {
+            win(playerSelection, computerSelection);
+            return 'You win! Paper beats Rock';
+        }
+    } else if (playerSelection === 'SCISSORS') {
+        if (computerSelection === 'Rock') {
+            lose(playerSelection, computerSelection);
+            return 'You lose! Rock beats Scissors';
+        } else {
+            win(playerSelection, computerSelection);
+            return 'You win! Scissors beats Paper';
+            
+        }
     }
-    else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        return 'You win! Paper beats rock';
+ }
+
+ //Stores the winner of the round   
+winner = playRound(playerSelection, computerSelection);
+
+console.log(winner)
+console.log(winner)
+console.log(winner)
+console.log(winner)
+
+//Adds a point to the winner's score.
+function addPoints() {
+if (winner === 'You win! Rock beats Scissors' || winner === 'You win! Paper beats Rock' || winner === 'You win! Scissors beats Paper') {
+        playerScore++;
+        return `Player Score: ${playerScore}` + ' | ' + `Computer Score: ${computerScore}`;
+} else if (winner === 'You lose! Paper beats Rock' || winner === 'You lose! Scissors beats Paper' || winner === 'You lose! Rock beats Scissors') {
+       computerScore++;
+       return `Player Score: ${playerScore}` + ' | ' + `Computer Score: ${computerScore}`;
+    } else {
+        return `Player Score: ${playerScore}` + ' | ' + `Computer Score: ${computerScore}`
     }
-      else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-        return 'You lose! Rock beats Scissors';
-    } 
-     else if (playerSelection === 'Rock' && computerSelection === 'Paper')   {
-        return 'You lose! Paper beats Rock'
+}
+
+roundWinner = addPoints(winner);
+
+
+
+
+/*
+
+winner = playRound(playerSelection, computerSelection);
+
+
+function addPoints(winner){
+if (winner === 'You win! Rock beats Scissors' || winner === 'You win! Paper beats Rock' || winner === 'You win! Scissors beats Paper') {
+        playerScore++;
+        return playerScore;
+    } else if (winner === 'You lose! Paper beats Rock' || winner === 'You lose! Scissors beats Paper' || winner === 'You lose! Rock beats Scissors') {
+       computerScore++;
+       return computerScore;
     }
-     else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-        return 'You win! Scissors beats Paper';
-    }   
-     else if (playerSelection === 'Rock' && computerSelection === 'Rock' || playerSelection === 'Paper' && computerSelection === 'Paper' || playerSelection === 'Scissors' && computerSelection === 'Scissors')
-     {
-         return 'It\'s a tie!'
-     }
+let points = addPoints();
+}
 }
 
 
 
 
-console.log(playRound(playerSelection, computerSelection));
+let score = game(winner);
+
+function gameScore(score) {
+    if (playerScore < 5) {
+            return 'Player Score: ' + playerScore;
+        } else if (playerScore = 5) {
+            return "Congratulations! You win the game!"
+        }
+    if (computerScore < 5) {
+           return 'Computer Score: ' + computerScore;
+       } else if (computerScore = 5) {
+           return "You lost the game."
+       }
+}
+
+
+
+//let score = game(winner);
+console.log(score, addPoints(winner))
+
+/*function multipleGames(score) {    
+    if (playerScore === 1) {
+        let playerScore = 0;
+        let computerScore = 0;
+        return "Congratulations! You won the game!"
+    } else if (computerScore === 1) {
+        let playerScore = 0;
+        let computerScore = 0;
+        return "You lose the game."
+    }
+}
+
+*/
+
+
+//console.log(game(winner));
+//console.log(multipleGames(score));
+//console.log(score);
+//console.log('Player: ' + playerSelection, 'Computer: ' + computerSelection);
+//console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore);
+
+//let result = playRound(playerSelection, computerSelection) + " | " + game(); 
+
 
 
 
 
 
 /*
-function computerPlay() {
-    if (computerPlay("rock")) {
-      return "Rock"
-    } else if (computerPlay("paper")) {
-        return "Paper"
-    } else if (computerPlay("scissors")) {
-        return "Scissors"
-    }
+Write a new function called game()
+The playRound function should be inside of the game() function
+The game() function should play a 5 round game that keeps score
+Then reports a winner or loser at the end.
+---
+I need a variable with the player's score.
+I need a variable with the computer's score.
+I need to have a different result per round.
+I need the scores of the player and the computer to change depending on the reult of the round.
+At the end of 5 rounds the player with the most points should be declared the winner.
 
-} ;
 
-console.log(computerPlay("rock"));
+
 
 */
+
+/* function game() {
+    if (round === "You win! Rock beats Scissors" || round === 'You win! Paper beats rock' || round === 'You win! Scissors beats Paper') {
+        playerScore++;
+        return `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
+    } else if (round === "You lose! Scissors beats Paper" || round === 'You lose! Rock beats Scissors' || round === 'You lose! Paper beats Rock') {
+    computerScore++;
+    return `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
+}
+     else {
+        return `Player Score: ${playerScore}, Computer Score: ${computerScore}`
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
 
 </script>
 
