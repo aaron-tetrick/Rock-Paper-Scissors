@@ -21,15 +21,14 @@
 
 
 
-//let playerEntry = prompt('Rock, Paper, or Scissors?');
-const playerSelection =  'PAPER'//playerEntry.toUpperCase();
-const computerSelection = 'Rock' //computerPlay();
+let playerEntry = prompt('Rock, Paper, or Scissors?');
+const playerSelection =  playerEntry.toUpperCase();
+const computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
 //let winner = playRound(playerSelection, computerSelection);
 let winner;
 let loser;
-let result;
 let roundWinner;
 
 
@@ -42,20 +41,21 @@ function computerPlay() {
     }
 
 
-
-
+//CODE from example R,P,S game. May use in future.
 function win(playerChoice, computerChoice) {
     //playerScore++;
-    console.log(playerChoice);
-    console.log(computerChoice);
-    console.log(playerChoice + ' beats ' + computerChoice + '!')
+    //console.log(playerChoice);
+    //console.log(computerChoice);
+    //console.log(playerChoice + ' beats ' + computerChoice + '!')
 }
 function lose() {
     //computerScore++;
 }
 function draw() {
-    console.log('DRAW');
+    //console.log('DRAW');
 }
+
+
 
 //Returns whether you win or lose the round
 function playRound(playerSelection, computerSelection) {
@@ -93,11 +93,6 @@ function playRound(playerSelection, computerSelection) {
  //Stores the winner of the round   
 winner = playRound(playerSelection, computerSelection);
 
-console.log(winner)
-console.log(winner)
-console.log(winner)
-console.log(winner)
-
 //Adds a point to the winner's score.
 function addPoints() {
 if (winner === 'You win! Rock beats Scissors' || winner === 'You win! Paper beats Rock' || winner === 'You win! Scissors beats Paper') {
@@ -110,11 +105,15 @@ if (winner === 'You win! Rock beats Scissors' || winner === 'You win! Paper beat
         return `Player Score: ${playerScore}` + ' | ' + `Computer Score: ${computerScore}`
     }
 }
-
+//Stores the score of the game.
 roundWinner = addPoints(winner);
 
 
 
+
+console.log(playerSelection, computerSelection);
+console.log(winner);
+console.log(roundWinner);
 
 /*
 
