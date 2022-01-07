@@ -1,0 +1,36 @@
+
+h1 {
+    display: flex;
+    justify-content: center;
+}    
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+#score {
+       text-align: center;
+ 
+
+}
+
+
+#results{
+    text-align: center;
+    font-weight: bold;
+}
+
+#winner {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#restart {
+    display: none;
+    justify-content: center;
+    margin: 25px;
+}
