@@ -6,34 +6,40 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href= "style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Rubik">
 <script src="main.js" defer></script>
-
 
 
 </head>
 <body>
-
-<h1>Rock, Paper, Scissors Game</h1>
-
-<div id='buttons'>
-    <button id ='rock-btn'>Rock</button>
-    <button id='paper-btn'>Paper</button>
-    <button id='scissors-btn'>Scissors</button>
-</div>
-
+<header>
+    <h1>Rock, Paper, Scissors Game</h1>
+</header>
 
 <p id='results'>Select a weapon</p>
 
+<div id='buttons'>
+    <button class="button-style" id ='rock-btn'>Rock</button>
+    <button class="button-style"  id='paper-btn'>Paper</button>
+    <button class="button-style" id='scissors-btn'>Scissors</button>
+</div>
+
+
+
+
+
 
 <div id='score'>
-    <p>Player's Score: <span id="user-score">0</span></p>
-    <p>Computer's Score: <span id="computer-score">0</span></p>
+   <span id="user-score">0</span>
+   <span>|</span>
+   <span id="computer-score">0</span>
 </div>
+ 
 
 <div id='winner'></div>
 
-<div id='restart' class = 'restart2'> 
-    <button>Play Again?</button> 
+<div id='restart'> 
+    <button class="button-style">Play Again?</button> 
 </div>
 
 

@@ -14,7 +14,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-//Selecting a weapon Evnet Listeners
+//Selecting a weapon Event Listeners
 rock.addEventListener('click', choseRock);
 paper.addEventListener('click', chosePaper);
 scissors.addEventListener('click', choseScissors);
@@ -134,13 +134,17 @@ function choseScissors(){
 function declareWinner() {
     if (playerScore === 5) {
         winner.textContent = "Congratulations! You won!";
+        winner.style.color = "green";
         userScore.style.fontWeight = 'bold';
+        userScore.style.color = "rgb(25, 80, 126)";
         buttons.style.display = 'none'
         restart.style.display = "flex";
         restart.addEventListener('click', restartGame);
     } else if (computerScore === 5){
         winner.textContent = "You lost the game.";
+        winner.style.color = "red";
         compScore.style.fontWeight = 'bold';
+        compScore.style.color = "rgb(25, 80, 126)";
         buttons.style.display = 'none'
         restart.style.display = "flex";
         restart.addEventListener('click', restartGame);
@@ -156,8 +160,10 @@ function restartGame() {
     computerScore = 0;
     userScore.textContent = playerScore;
     compScore.textContent = computerScore;
-    compScore.style.fontWeight = 'normal';
     userScore.style.fontWeight = 'normal';
+    compScore.style.fontWeight = 'normal';
+    userScore.style.color = "black";
+    compScore.style.color = "black";
     winner.textContent = '';
     restart.style.display = 'none';
     buttons.style.display = 'flex';

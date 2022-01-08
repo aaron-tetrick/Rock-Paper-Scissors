@@ -1,36 +1,101 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+     font-family: "Rubik", sans-serif;
+     background-color: rgb(219, 218, 218);;
+    display: flex;
+    flex-direction: column;
+   
+    }
 
+
+header {
+    background-color: rgb(25, 80, 126);
+
+}
 h1 {
     display: flex;
     justify-content: center;
+    padding: 20px;
+    border-bottom: solid 5px white;
+    font-size: 40px;
+   
 }    
 
 #buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
+    margin: 1.5rem;
+   
+}
 
+.button-style {
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(211, 116, 116);
+    border: solid 3px black;
+    border-radius: 10px;
+}
+
+
+#rock-btn {
+    padding: 20px 50px;
+}
+
+#paper-btn {
+    padding: 20px 46px;
+}
+
+
+#scissors-btn {
+    padding: 20px 32px
+}
+
+.button-style:hover {
+    color: white;
+    background-color: rgb(25, 80, 126);
+    transition: 0.3s;
 }
 
 #score {
-       text-align: center;
- 
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    font-size: 70px;
+    gap: 25px;
+    border: solid 4px black;
+    width: 35%;
+   
+    }
+
+#score > span {
+    justify-content: center;
 
 }
 
 
-#results{
+
+#results {
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 35px;
+    margin: 1.5rem;
 }
 
 #winner {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
+    margin: 2rem;
 }
 
 #restart {
     display: none;
     justify-content: center;
-    margin: 25px;
+    margin: 0.5rem;
 }
