@@ -33,7 +33,7 @@ function computerPlay() {
 //DOM Functions
 
 
-//If player chooses Paper
+//If player chooses Rock
 function choseRock(){
 
 const computerSelection = computerPlay();
